@@ -1,13 +1,13 @@
-module registrador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13,clk,ch0,ch1,saida_ultimoflip,saidas_registrador,d);
+module registrador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,bit15,clk,ch0,ch1,saida_ultimoflip,saidas_registrador,d);
 	
 	input clk,d,ch0,ch1;
-	wire[13:0] q;
-	output [12:0] saidas_registrador;
+	wire[15:0] q;
+	output [14:0] saidas_registrador;
 	output saida_ultimoflip;
-	input bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13;
+	input bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,bit15;
 
 	
-	flipflop_especial t1(bit0,d,q[0],clk,q[1],ch0,ch1, q[13]);
+	flipflop_especial t1(bit0,d,q[0],clk,q[1],ch0,ch1, q[15]);
 	assign saidas_registrador[0] = q[0];
 	flipflop t2(bit1,q[0],q[1],clk,q[2],ch0, ch1);
 	assign saidas_registrador[1] = q[1];
@@ -31,10 +31,14 @@ module registrador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11
 	assign saidas_registrador[10] = q[10];
 	flipflop t12(bit11,q[10],q[11],clk,q[12],ch0, ch1);
 	assign saidas_registrador[11] = q[11];
-	flipflop t13(bit12,q[11],q[12],clk,q[13],ch0,ch1);
+	flipflop t13(bit12,q[11],q[12],clk,q[13],ch0, ch1);
 	assign saidas_registrador[12] = q[12];
-	flipflop t14(bit13,q[12],q[13],clk,q[0],ch0, ch1);
-	assign saida_ultimoflip = q[13];
+	flipflop t14(bit13,q[12],q[13],clk,q[14],ch0, ch1);
+	assign saidas_registrador[13] = q[13];
+	flipflop t15(bit14,q[13],q[14],clk,q[15],ch0,ch1);
+	assign saidas_registrador[14] = q[14];
+	flipflop t16(bit15,q[14],q[15],clk,q[0],ch0, ch1);
+	assign saida_ultimoflip = q[15];
 	
 
 endmodule
