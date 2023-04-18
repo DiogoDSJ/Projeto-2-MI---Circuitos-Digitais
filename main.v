@@ -17,14 +17,6 @@ module main(ch1,ch0,clk,saida_reg1,saida_reg2,saida_reg3,saida_reg4,saida_reg5,a
 	 dobalacobaco doba(1, 1, clk, clock1, clock2,clock3);
 	 contador contador_1(0,1,1,1,1,1,1,clock1,ch1,ch0,acender_coluna);
 	 
-	 or or1(chave, ch0, ch1);
-	 and and1(saida_l1, saida_reg1, chave); 
-	 and and2(saida_l2, saida_reg2, chave);
-	 and and3(saida_l3, saida_reg3, chave);
-	 and and4(saida_l4, saida_reg4, chave);
-	 and and5(saida_l5, saida_reg5, chave);
-	 
-	 
 	 registrador reg_1(1,1,1,0,1,1,1,0,1,1,1,0,1,0,1,0,clock3, ch0, ch1, linha1);
 	 registrador reg_2(0,0,1,0,0,0,1,0,0,0,1,0,1,0,1,0,clock3, ch0, ch1, linha2);
 	 registrador reg_3(1,1,1,0,1,1,1,0,1,1,1,0,1,0,1,0,clock3, ch0, ch1, linha3);
