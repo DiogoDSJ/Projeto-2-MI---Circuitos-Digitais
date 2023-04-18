@@ -20,5 +20,6 @@ module contador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,clk,ch1,ch0,saidas_contador,d
 	assign saidas_contador[5] = q[5];
 	flipflop_contador t7(bit6,q[5],q[6],clk,ch1, ch0);
 	assign saidas_contador[6] = q[6];
+	
 
 endmodule

@@ -7,10 +7,12 @@ module flipflop_registrador7b(valores_registrador,d,q,clk,saida_flipposterior,ch
 	wire f1,f2;
 	input sinal;
 	
-	mux_reg7b mux0(valores_registrador,saida_flipposterior,d,saida_flipposterior,ch1,ch0,saida_mux);
+	and and1(chave, ~ch0, ~ch1);
 	
-	and and1(f1, saida_mux, sinal);
-	and and2(f2, valores_registrador, ~sinal);
+	mux_reg7b mux0(valores_registrador,d,chave,saida_mux);
+	
+	and and2(f1, saida_mux, sinal);
+	and and3(f2, valores_registrador, ~sinal);
 	
 	or or1(saida, f1,f2);
 	

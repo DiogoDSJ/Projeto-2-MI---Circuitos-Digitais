@@ -4,8 +4,8 @@ module divisor(clk, clock1, clock2,clock3);
 	output clock1, clock2,clock3;
 	reg [26:0] count;
 	
-	assign clock1 = count[8];
-	assign clock2 = count[8];
+	assign clock1 = count[5];
+	assign clock2 = count[5];
 	assign clock3 = count[23];
 	
 	always @(posedge clk) begin
