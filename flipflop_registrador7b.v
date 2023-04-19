@@ -1,6 +1,6 @@
-module flipflop_registrador7b(valores_registrador,d,q,clk,saida_flipposterior,ch1, ch0,sinal);
+module flipflop_registrador7b(valores_registrador,d,q,clk,ch1, ch0,sinal);
 	
-	input d,clk,saida_flipposterior,ch1, ch0, valores_registrador;
+	input d,clk,ch1, ch0, valores_registrador;
 	output reg q;
 	wire saida_mux;
 	wire saida;
