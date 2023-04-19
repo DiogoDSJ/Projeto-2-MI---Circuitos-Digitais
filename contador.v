@@ -4,7 +4,7 @@ module contador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,clk,ch1,ch0,saidas_contador,d
 	wire[6:0] q;
 	output [6:0] saidas_contador;
 	input bit0,bit1,bit2,bit3,bit4,bit5,bit6;
-
+	
 	
 	flipflop_contador_especial t1(bit0,d,q[0],clk,ch1,ch0,q[6]);
 	assign saidas_contador[0] = q[0];

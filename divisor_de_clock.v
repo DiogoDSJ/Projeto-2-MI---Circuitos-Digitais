@@ -1,5 +1,5 @@
-module divisor_de_clock(j,k,clk,saida1,saida2,ch1,ch0);
-	input k,j,clk,ch1,ch0;
+module divisor_de_clock(j,k,clk,saida1,saida2);
+	input k,j,clk;
 	output saida1,saida2;
 	wire s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28;
 	
@@ -30,13 +30,7 @@ module divisor_de_clock(j,k,clk,saida1,saida2,ch1,ch0);
 	jk_ff vintequatro(j,k,s22,s23);
 	jk_ff vintecinco(j,k,s23,s24);
 	
-	wire f1,f2;
-	
-	or or1(f1, ch1, ch0);
-	nand nand1(f2, ch1, ch0);
-	
-	and and1(saida1, s5, f1);
-	and and2(saida2, s24, f1, f2);
-	
+	assign saida1 = s5;
+	assign saida2 = s24;
 		
 endmodule
