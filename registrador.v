@@ -4,6 +4,11 @@ module registrador(bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11
 	wire[15:0] q;
 	output [15:0] saidas_registrador;
 	input bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,bit15;
+	//bits do 0 até 15 são os bits que serão setados no registrador de 16 bits.
+	//o wire "q" são as saidas dos flipflops.
+	//o output saidas_registrador são as saidas de cada flipflop.
+	// clk = clock
+	// d = entrada serial, e também a entrada do primeiro flipflop.
 
 	
 	flipflop_especial t1(bit0,d,q[0],clk,q[1],ch1,ch0, q[15]);
